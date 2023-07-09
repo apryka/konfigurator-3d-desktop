@@ -48,20 +48,22 @@ export const Products:React.FC<ProductsProps> = ({ addModel }) => {
       <ul className="flex flex-col gap-2 snap-x snap-mandatory scroll-pb-1 max-w-full overflow-x-auto mb-[24px]">
         {categories?.map(({id, name, path: _path}: {id: string, name: string, path:string}) => (
           <li key={id}>
-            <button type="button" className={`rounded-[4px] px-2 py-4 whitespace-nowrap font-semibold ${activeCategory === name ? "bg-ed-yellow" : "bg-[#f2f2f2]"}`} onClick={() => setActiveCategory(name)}>{name}</button>
+            <button type="button" className={`rounded-[4px] px-2 py-4 whitespace-nowrap font-semibold w-full text-left ${activeCategory === name ? "bg-ed-yellow" : "bg-[#f2f2f2]"}`} onClick={() => setActiveCategory(name)}>{name}</button>
+
+            {activeCategory === name && (
+              <ul className="flex flex-col gap-y-4 my-[20px]">
+              {filteredProducts?.map(({id, images, name, path: _path, configuratorVariants}: {id: string, images: any, name:string, path: string, configuratorVariants: any[]}) => (
+                <li key={id} onClick={() => handleModelClick(configuratorVariants)} className="flex gap-[10px] items-center">
+                  <img src={images[0]?.src} alt={images[0]?.alt} className="w-[72px] h-[72px] rounded-[5px] overflow-hidden bg-[#F2F2F2]" />
+                  <p className="font-manrope text-base text-ed-black2">{name}</p>
+                </li>
+              ))}
+            </ul>
+            )}
           </li>
         ))}
       </ul>
       
-      <ul className="grid grid-cols-2 gap-x-2 gap-y-4">
-        {filteredProducts?.map(({id, images, name, path: _path, configuratorVariants}: {id: string, images: any, name:string, path: string, configuratorVariants: any[]}) => (
-          <li key={id} onClick={() => handleModelClick(configuratorVariants)}>
-            <img src={images[0]?.src} alt={images[0]?.alt} />
-            <p className="font-manrope text-base text-ed-black2">{name}</p>
-          </li>
-        ))}
-      </ul>
-
     </>
   )
 }
