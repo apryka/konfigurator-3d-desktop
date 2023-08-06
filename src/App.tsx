@@ -119,8 +119,8 @@ function App() {
 
 
       {roomSize && <div className='flex flex-col gap-[10px] absolute right-[30px] top-[26px]'>
-        <button type='button' className='rounded-[4px] bg-ed-white p-[10px] cursor-pointer' onClick={() => setZoom(zoom => zoom+0.1)}><img src={addIcon} alt="add" className='w-[20px] h-[20px]' /></button>
-        <button type='button' className='rounded-[4px] bg-ed-white p-[10px] cursor-pointer' onClick={() => setZoom(zoom => zoom === 1 ? zoom : zoom-0.1)}><img src={subtractIcon} alt="add" className='w-[20px] h-[20px]' /></button>
+        <button type='button' className='rounded-[4px] bg-ed-white p-[10px] cursor-pointer' onClick={() => setZoom(zoom => zoom+0.05)}><img src={addIcon} alt="add" className='w-[20px] h-[20px]' /></button>
+        <button type='button' className='rounded-[4px] bg-ed-white p-[10px] cursor-pointer' onClick={() => setZoom(zoom => zoom === 1 ? zoom : zoom-0.05)}><img src={subtractIcon} alt="add" className='w-[20px] h-[20px]' /></button>
         {selectedItem && <button type='button' className='rounded-[4px] bg-ed-white p-[10px] cursor-pointer' onClick={rotateHandler}><img src={rotateIcon} alt="add" className='w-[20px] h-[20px]' /></button>}
       </div>}
 
@@ -128,7 +128,7 @@ function App() {
         <button
          type='button'
          ref={buttonRef as React.LegacyRef<HTMLButtonElement> | undefined}
-         className='absolute top-0 left-[1rem] translate-y-[calc(-100%_-_10px)] flex gap-1 rounded-[4px] bg-ed-white px-2 py-4 hover:bg-ed-yellow cursor-pointer'
+         className='absolute top-[26px] left-[670px] flex gap-1 rounded-[4px] bg-ed-white px-2 py-4 hover:bg-ed-yellow cursor-pointer'
          onClick={(e) => {
             e.stopPropagation();
             setTooltip(!tooltip);
@@ -138,7 +138,7 @@ function App() {
           <span className='block w-2 h-2 rounded-full border border-ed-black2'></span>
           <span className='block w-2 h-2 rounded-full border border-ed-black2'></span>
 
-          {tooltip && <ul className='absolute bg-ed-white rounded-[4px] p-4 flex flex-col shadow-sm bottom-full left-0 mb-[10px]'>
+          {tooltip && <ul className='absolute bg-ed-white rounded-[4px] p-4 flex flex-col shadow-sm top-full left-0 mt-[10px]'>
             <li className='font-manrope text-sm whitespace-nowrap text-ed-error' onClick={() => {
               setTooltip(false);
               setModels([]);
