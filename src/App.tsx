@@ -79,7 +79,7 @@ function App() {
         <ul className='p-[20px] flex flex-col gap-[10px] text-sm'>
           <li>
             <button 
-              className={`bg-none bg-transparent rounded-[5px] border-0 flex items-center flex-col p-[10px] pt-[20px] w-[100px] cursor-pointer ${view === VIEW.Size ? "bg-[#FFDE44]" : "bg-[#DEDEDE]"}`}
+              className={`rounded-[5px] border-0 flex items-center flex-col p-[10px] pt-[20px] w-[100px] cursor-pointer ${view === VIEW.Size ? "bg-[#FFDE44]" : "bg-[#DEDEDE]"}`}
               onClick={() => setView(VIEW.Size)}    
             >
               <img src={sizeIcon} alt='wymiary lokalu' className='w-[30px] mb-2' />
@@ -88,7 +88,7 @@ function App() {
           </li>
           <li>
             <button 
-              className={`bg-none bg-transparent rounded-[5px] border-0 flex items-center flex-col p-[10px] pt-[20px] w-[100px] cursor-pointer ${view === VIEW.Photo ? "bg-[#FFDE44]" : "bg-[#DEDEDE]"}`}
+              className={`rounded-[5px] border-0 flex items-center flex-col p-[10px] pt-[20px] w-[100px] cursor-pointer ${view === VIEW.Photo ? "bg-[#FFDE44]" : "bg-[#DEDEDE]"}`}
               onClick={() => setView(VIEW.Photo)}  
             >
               <img src={addPhotoIcon} alt='zdjęcie lokalu' className='w-[30px] mb-2' />
@@ -97,7 +97,7 @@ function App() {
           </li>
           <li>
             <button 
-              className={`bg-none bg-transparent rounded-[5px] border-0 flex items-center flex-col p-[10px] pt-[20px] w-[100px] cursor-pointer ${view === VIEW.Products ? "bg-[#FFDE44]" : "bg-[#DEDEDE]"}`}
+              className={`rounded-[5px] border-0 flex items-center flex-col p-[10px] pt-[20px] w-[100px] cursor-pointer ${view === VIEW.Products ? "bg-[#FFDE44]" : "bg-[#DEDEDE]"}`}
               onClick={() => setView(VIEW.Products)}  
             >
               <img src={productsIcon} alt='dostępne produkty' className='w-[30px] mb-2' />

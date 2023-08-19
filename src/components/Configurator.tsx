@@ -15,7 +15,7 @@ import { Selection, Select, EffectComposer, Outline } from '@react-three/postpro
 import { Room, DraggableObject } from '.';
 import { AppContext } from '../context/AppContext';
 import { Model } from '../types';
-import ModelStandKartonowy from '../models/Stand-kartonowy';
+// import ModelStandKartonowy from '../models/Stand-kartonowy';
 
 // import Stand from '../models/Stand';
 // import StandKartonowy from '../models/StandKartonowy';
@@ -95,7 +95,7 @@ export const Configurator:React.FC<ConfiguratorProps> = ({ selectedItem, setSele
 
             </Selection>
           
-            <Box castShadow receiveShadow scale={4} position={[0,0,0]} rotation={[0, 0, 0]}><ModelStandKartonowy /></Box>
+            {/* <Box castShadow receiveShadow scale={4} position={[0,0,0]} rotation={[0, 0, 0]}><ModelStandKartonowy /></Box> */}
 
           
         </Bounds>
