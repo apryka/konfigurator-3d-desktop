@@ -50,7 +50,7 @@ function MobileApp() {
   const { data: categoriesData, error:_categoriesDataError, isLoading: _categoriesDataIsLoading } = useSWR(API.categories, fetcher);
 
   const buttonRef = useOutsideClick(() => setTooltip(false));
-  const orientation = useScreenOrientation();
+  const orientation = useScreenOrientation(); console.log(orientation);
 
   useEffect(() => {
     const portraitOrientation = window.matchMedia("(orientation: portrait)");
