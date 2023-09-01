@@ -4,7 +4,7 @@ import React, { Suspense, useContext } from 'react';
 
 import * as THREE from 'three';
 import { Canvas} from '@react-three/fiber';
-import { Box, OrbitControls, Bounds} from '@react-three/drei';
+import { OrbitControls, Bounds} from '@react-three/drei';
 import { Selection, Select, EffectComposer, Outline } from '@react-three/postprocessing';
 // import { nanoid } from 'nanoid';
 
