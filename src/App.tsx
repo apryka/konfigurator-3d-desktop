@@ -44,9 +44,9 @@ function App() {
 
   const [addLoadedModel, loadedModels] = useModels();
 
-  const searchParams = new URLSearchParams(document.location.search); console.log(searchParams.get('language') ? API.translations + searchParams.toString() : API.translations);
+  const searchParams = new URLSearchParams(document.location.search);
 
-  const { data: translationsData, error:_translationsDataError, isLoading: translationsDataIsLoading } = useSWR(searchParams.get('language') ? API.translations + '?' + searchParams.toString() : API.translations, fetcher);
+  const { data: translationsData, error:_translationsDataError, isLoading: translationsDataIsLoading } = useSWR(searchParams.get('language') ? API.translations + '&' + searchParams.toString() : API.translations, fetcher);
   const translations = translationsData?.contentSections[0].properties;
   const { data: categoriesData, error:_categoriesDataError, isLoading: _categoriesDataIsLoading } = useSWR(searchParams.get('language') ? API.translations + '?' +  searchParams.toString() : API.categories, fetcher);
 
