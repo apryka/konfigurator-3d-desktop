@@ -11,7 +11,7 @@ export const list = [
   'RamkaPolkowa',
   'Shelfstoper',
   'Stand', 
-  'StandKartonowy', 
+  'StandKarton', 
   'StandWolnostojacy',
   'Toper',
   'Wobler',
