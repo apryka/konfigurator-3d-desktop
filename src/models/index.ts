@@ -16,5 +16,10 @@ export const list = [
   'Toper',
   'Wobler',
   'WyspaPaletowa',
+  'Lama',
+  'Paletowisko',
+  'Polesign',
+  'PolkiStockowe',
+  'Sensomat',
   'NonExisting', 
 ];
