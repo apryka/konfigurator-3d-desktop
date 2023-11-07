@@ -21,5 +21,12 @@ export const list = [
   'Polesign',
   'PolkiStockowe',
   'Sensomat',
+  'NaklejkaPodloga',
+  'OwijkaNstd',
+  'OwijkaPaleta',
+  'Plakat',
+  'Ramka',
+  'StandNstd',
+  'Ulotka',
   'NonExisting', 
 ];
