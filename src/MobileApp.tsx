@@ -45,9 +45,11 @@ function MobileApp() {
 
   const [addLoadedModel, loadedModels] = useModels();
 
-  const { data: translationsData, error:_translationsDataError, isLoading: translationsDataIsLoading } = useSWR(API.translations, fetcher);
+  const searchParams = new URLSearchParams(document.location.search);
+
+  const { data: translationsData, error:_translationsDataError, isLoading: translationsDataIsLoading } = useSWR(searchParams.get('language') ? API.translations + '&' + searchParams.toString() : API.translations, fetcher);
   const translations = translationsData?.contentSections[0].properties;
-  const { data: categoriesData, error:_categoriesDataError, isLoading: _categoriesDataIsLoading } = useSWR(API.categories, fetcher);
+  const { data: categoriesData, error:_categoriesDataError, isLoading: _categoriesDataIsLoading } = useSWR(searchParams.get('language') ? API.categories + '?' + searchParams.toString() : API.categories, fetcher);
 
   const buttonRef = useOutsideClick(() => setTooltip(false));
   const orientation = useScreenOrientation(); console.log(orientation);

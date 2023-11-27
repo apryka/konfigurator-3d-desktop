@@ -16,7 +16,9 @@ export const Products:React.FC<ProductsProps> = ({ addModel }) => {
   const [activeCategory, setActiveCategory] = useState('');
   const [filterInput, setFilterInput] = useState('');
 
-  const { data, error: _error, isLoading: _isLoading } = useSWR(() => activeCategory ? `${API.products}?category=${encodeURI(activeCategory)}` : null, fetcher);
+  const searchParams = new URLSearchParams(document.location.search);
+
+  const { data, error: _error, isLoading: _isLoading } = useSWR(() => activeCategory ? `${API.products}?category=${encodeURI(activeCategory)}${searchParams.get('language') ? '?' + searchParams.toString() : ''}` : null, fetcher);
 
   const filteredProducts = filterInput ? data?.products.filter(({ name }: { name: string}) => name.includes(filterInput)) : data?.products;
 

@@ -4,7 +4,7 @@ import React, { Suspense, useContext } from 'react';
 
 import * as THREE from 'three';
 import { Canvas} from '@react-three/fiber';
-import { Box, OrbitControls, Bounds} from '@react-three/drei';
+import { OrbitControls, Bounds} from '@react-three/drei';
 import { Selection, Select, EffectComposer, Outline } from '@react-three/postprocessing';
 // import { nanoid } from 'nanoid';
 
@@ -23,6 +23,8 @@ import { Model } from '../types';
 // import KoncowkaRegalu from '../models/KoncowkaRegalu';
 // import KoszZasypowy from '../models/KoszZasypowy';
 // import ObudowaSlupa from '../models/ObudowaSlupa';
+// import StandA from '../models/StandKartonA';
+// import StandB from '../models/StandKartonB';
 
 const floorColor = '#aaa';
 const wallsColor = '#fff';
@@ -88,10 +90,16 @@ export const Configurator:React.FC<ConfiguratorProps> = ({ selectedItem, setSele
               models.map((model:Model, idx: number) => {
                 const Model = loadedModels[model.name] as any;
                 // return Model ? (<DraggableObject key={`${model.id}-${idx}`} bounds={roomBounds} position={[1, 1, 1]} setActive={setOrbitControlsDisabled} onDoubleClick={() => setSelectedItem(selectedItem ? '' : model.id)}><Select enabled={model.id === selectedItem}><Box castShadow receiveShadow scale={3} position={[0,0,0]} rotation={[0, model.rotation, 0]}><Model /></Box></Select></DraggableObject>) : null; // scale for Bulldog 0.0125
-                return Model ? (<DraggableObject key={`${model.id}-${idx}`} bounds={roomBounds} position={[1, 1, 1]} setActive={setOrbitControlsDisabled} onDoubleClick={() => setSelectedItem(selectedItem ? '' : model.id)}><Select enabled={model.id === selectedItem}><group dispose={null} castShadow receiveShadow scale={10} position={[0,0,0]} rotation={[0, model.rotation, 0]}><Model /></group></Select></DraggableObject>) : null;
+                return Model ? (<DraggableObject key={`${model.id}-${idx}`} bounds={roomBounds} position={[1, 0, 0]} setActive={setOrbitControlsDisabled} onDoubleClick={() => setSelectedItem(selectedItem ? '' : model.id)}><Select enabled={model.id === selectedItem}><group dispose={null} castShadow receiveShadow position={[0,0,0]} rotation={[0, model.rotation, 0]}><Model /></group></Select></DraggableObject>) : null;
               
             })
             }
+
+{/* <DraggableObject key={`${'123'}-${'1'}`} bounds={roomBounds} position={[0, 0, 0]} setActive={setOrbitControlsDisabled} onDoubleClick={() => setSelectedItem(selectedItem ? '' : '123')}><Select enabled={'123' === selectedItem}><group dispose={null} castShadow receiveShadow  position={[0,0,0]} rotation={[0, 0, 0]}><StandK /></group></Select></DraggableObject> */}
+{/* <DraggableObject key={`${'123'}-${'2'}`} bounds={roomBounds} position={[2, 0, 0]} setActive={setOrbitControlsDisabled} onDoubleClick={() => setSelectedItem(selectedItem ? '' : '123')}><Select enabled={'123' === selectedItem}><group dispose={null} castShadow receiveShadow  position={[0,0,0]} rotation={[0, 0, 0]}><DisplayN /></group></Select></DraggableObject> */}
+{/* <DraggableObject key={`${'123'}-${'3'}`} bounds={roomBounds} position={[4, 0, 0]} setActive={setOrbitControlsDisabled} onDoubleClick={() => setSelectedItem(selectedItem ? '' : '123')}><Select enabled={'123' === selectedItem}><group dispose={null} castShadow receiveShadow  position={[0,0,0]} rotation={[0, 0, 0]}><KoszZasyp/></group></Select></DraggableObject> */}
+{/* <DraggableObject key={`${'123'}-${'1'}`} bounds={roomBounds} position={[0, 0, 0]} setActive={setOrbitControlsDisabled} onDoubleClick={() => setSelectedItem(selectedItem ? '' : '123')}><Select enabled={'123' === selectedItem}><group dispose={null} castShadow receiveShadow scale={2.5} position={[0,0,0]} rotation={[0, 0, 0]}><StandA /></group></Select></DraggableObject> */}
+{/* <DraggableObject key={`${'1234'}-${'1'}`} bounds={roomBounds} position={[0, 0, 0]} setActive={setOrbitControlsDisabled} onDoubleClick={() => setSelectedItem(selectedItem ? '' : '1234')}><Select enabled={'1234' === selectedItem}><group dispose={null} castShadow receiveShadow scale={2.5} position={[0,0,0]} rotation={[0, 0, 0]}><StandB /></group></Select></DraggableObject> */}
           </Suspense>
 
             </Selection>
